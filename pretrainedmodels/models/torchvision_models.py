@@ -96,7 +96,19 @@ for model_name in __all__:
 def load_pretrained(model, num_classes, settings):
     assert num_classes == settings['num_classes'], \
         "num_classes should be {}, but is {}".format(settings['num_classes'], num_classes)
-    model.load_state_dict(model_zoo.load_url(settings['url']))
+    try:
+        model.load_state_dict(model_zoo.load_url(settings['url']))
+    except:
+        print('===========> Fixing model')
+        tmp = model_zoo.load_url(settings['url'])
+        for kmodel, kdict in zip(model.state_dict().keys(), tmp.keys()):
+            tmp[kmodel] = tmp.pop(kdict)
+        model.load_state_dict(tmp)
+        
+        from os.path import join
+        import torch
+        torch.save(tmp, join('/home/celona/.torch/models',settings['url'].split('/')[-1]))
+
     model.input_space = settings['input_space']
     model.input_size = settings['input_size']
     model.input_range = settings['input_range']
@@ -490,7 +502,7 @@ def vgg11_bn(num_classes=1000, pretrained='imagenet'):
     if pretrained is not None:
         settings = pretrained_settings['vgg11_bn'][pretrained]
         model = load_pretrained(model, num_classes, settings)
-    model = modify_vggs(model)
+    #model = modify_vggs(model)
     return model
 
 def vgg13(num_classes=1000, pretrained='imagenet'):
