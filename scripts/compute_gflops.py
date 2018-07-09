@@ -60,7 +60,7 @@ def main():
 
 
 	with open(args.save, 'w') as fp:
-    	json.dump(model_info, fp)
+		json.dump(model_info, fp)
 		
 
 if __name__ == '__main__':
