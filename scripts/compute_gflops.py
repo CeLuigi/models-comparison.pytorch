@@ -1,5 +1,6 @@
 import argparse
 import sys
+import json
 
 import torch
 import torch.backends.cudnn as cudnn
@@ -18,6 +19,7 @@ parser = argparse.ArgumentParser(description='PyTorch Estimate GFlops')
 parser.add_argument('-b', '--batch-size', default=64, type=int,
 	metavar='N', help='mini-batch size (default: 64)')
 parser.add_argument('--pretrained', default='imagenet', help='use pre-trained model')
+parser.add_argument('--save', default='../tflops_params.json', help='models info')
 
 
 def main():
@@ -55,6 +57,10 @@ def main():
 			
 			summary, n_params = utils.summary(model.input_size, model)
 			model_info[m] = (model.compute_average_flops_cost() / 1e9 / div_coeff, n_params.item())
+
+
+	with open(args.save, 'w') as fp:
+    	json.dump(model_info, fp)
 		
 
 if __name__ == '__main__':
