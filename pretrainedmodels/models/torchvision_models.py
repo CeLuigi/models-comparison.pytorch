@@ -446,44 +446,44 @@ def squeezenet1_1(num_classes=1000, pretrained='imagenet'):
 ###############################################################
 # VGGs
 
-def modify_vggs(model):
-    # Modify attributs
-    model._features = model.features
-    del model.features
-    model.linear0 = model.classifier[0]
-    model.relu0 = model.classifier[1]
-    model.dropout0 = model.classifier[2]
-    model.linear1 = model.classifier[3]
-    model.relu1 = model.classifier[4]
-    model.dropout1 = model.classifier[5]
-    model.last_linear = model.classifier[6]
-    del model.classifier
-
-    def features(self, input):
-        x = self._features(input)
-        x = x.view(x.size(0), -1)
-        x = self.linear0(x)
-        x = self.relu0(x)
-        x = self.dropout0(x) 
-        x = self.linear1(x)
-        return x
-
-    def logits(self, features):
-        x = self.relu1(features)
-        x = self.dropout1(x)
-        x = self.last_linear(x)
-        return x
-
-    def forward(self, input):
-        x = self.features(input)
-        x = self.logits(x)
-        return x
+#def modify_vggs(model):
+#    # Modify attributs
+#    model._features = model.features
+#    del model.features
+#    model.linear0 = model.classifier[0]
+#    model.relu0 = model.classifier[1]
+#    model.dropout0 = model.classifier[2]
+#    model.linear1 = model.classifier[3]
+#    model.relu1 = model.classifier[4]
+#    model.dropout1 = model.classifier[5]
+#    model.last_linear = model.classifier[6]
+#    del model.classifier
+#
+#    def features(self, input):
+#        x = self._features(input)
+#        x = x.view(x.size(0), -1)
+#        x = self.linear0(x)
+#        x = self.relu0(x)
+#        x = self.dropout0(x) 
+#        x = self.linear1(x)
+#        return x
+#
+#    def logits(self, features):
+#        x = self.relu1(features)
+#        x = self.dropout1(x)
+#        x = self.last_linear(x)
+#        return x
+#
+#    def forward(self, input):
+#        x = self.features(input)
+#        x = self.logits(x)
+#        return x
         
-    # Modify methods
-    setattr(model.__class__, 'features', features)
-    setattr(model.__class__, 'logits', logits)
-    setattr(model.__class__, 'forward', forward)  
-    return model
+#    # Modify methods
+#    setattr(model.__class__, 'features', features)
+#    setattr(model.__class__, 'logits', logits)
+#    setattr(model.__class__, 'forward', forward)  
+#    return model
 
 def vgg11(num_classes=1000, pretrained='imagenet'):
     """VGG 11-layer model (configuration "A")
@@ -492,7 +492,6 @@ def vgg11(num_classes=1000, pretrained='imagenet'):
     if pretrained is not None:
         settings = pretrained_settings['vgg11'][pretrained]
         model = load_pretrained(model, num_classes, settings)
-    model = modify_vggs(model)
     return model
 
 def vgg11_bn(num_classes=1000, pretrained='imagenet'):
@@ -502,7 +501,6 @@ def vgg11_bn(num_classes=1000, pretrained='imagenet'):
     if pretrained is not None:
         settings = pretrained_settings['vgg11_bn'][pretrained]
         model = load_pretrained(model, num_classes, settings)
-    #model = modify_vggs(model)
     return model
 
 def vgg13(num_classes=1000, pretrained='imagenet'):
@@ -512,7 +510,6 @@ def vgg13(num_classes=1000, pretrained='imagenet'):
     if pretrained is not None:
         settings = pretrained_settings['vgg13'][pretrained]
         model = load_pretrained(model, num_classes, settings)
-    model = modify_vggs(model)
     return model
 
 def vgg13_bn(num_classes=1000, pretrained='imagenet'):
@@ -522,7 +519,6 @@ def vgg13_bn(num_classes=1000, pretrained='imagenet'):
     if pretrained is not None:
         settings = pretrained_settings['vgg13_bn'][pretrained]
         model = load_pretrained(model, num_classes, settings)
-    model = modify_vggs(model)
     return model
 
 def vgg16(num_classes=1000, pretrained='imagenet'):
@@ -532,7 +528,6 @@ def vgg16(num_classes=1000, pretrained='imagenet'):
     if pretrained is not None:
         settings = pretrained_settings['vgg16'][pretrained]
         model = load_pretrained(model, num_classes, settings)
-    model = modify_vggs(model)
     return model
 
 def vgg16_bn(num_classes=1000, pretrained='imagenet'):
@@ -542,7 +537,6 @@ def vgg16_bn(num_classes=1000, pretrained='imagenet'):
     if pretrained is not None:
         settings = pretrained_settings['vgg16_bn'][pretrained]
         model = load_pretrained(model, num_classes, settings)
-    model = modify_vggs(model)
     return model
 
 def vgg19(num_classes=1000, pretrained='imagenet'):
@@ -552,7 +546,6 @@ def vgg19(num_classes=1000, pretrained='imagenet'):
     if pretrained is not None:
         settings = pretrained_settings['vgg19'][pretrained]
         model = load_pretrained(model, num_classes, settings)
-    model = modify_vggs(model)
     return model
 
 def vgg19_bn(num_classes=1000, pretrained='imagenet'):
@@ -562,5 +555,4 @@ def vgg19_bn(num_classes=1000, pretrained='imagenet'):
     if pretrained is not None:
         settings = pretrained_settings['vgg19_bn'][pretrained]
         model = load_pretrained(model, num_classes, settings)
-    model = modify_vggs(model)
     return model
