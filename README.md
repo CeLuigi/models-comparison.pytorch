@@ -6,6 +6,7 @@ The goal of this repo is:
 - to access pretrained ConvNets with a unique interface/API inspired by torchvision.
 
 News:
+- 11/07/2018: [GoogLeNet](https://github.com/BVLC/caffe/tree/master/models/bvlc_googlenet) converted from Caffe ModelZoo
 - 16/04/2018: [SE-ResNet* and SE-ResNeXt*](https://github.com/hujie-frank/SENet) thanks to [Alex Parinov](https://github.com/creafz)
 - 09/04/2018: [SENet154](https://github.com/hujie-frank/SENet) thanks to [Alex Parinov](https://github.com/creafz)
 - 22/03/2018: CaffeResNet101 (good for localization with FasterRCNN)
@@ -47,6 +48,7 @@ News:
         - [DualPathNet107](https://github.com/Cadene/pretrained-models.pytorch#dualpathnetworks)
         - [DualPathNet113](https://github.com/Cadene/pretrained-models.pytorch#dualpathnetworks)
         - [FBResNet152](https://github.com/Cadene/pretrained-models.pytorch#facebook-resnet)
+        - [GoogLeNet](https://github.com/Cadene/pretrained-models.pytorch#googlenet)
         - [InceptionResNetV2](https://github.com/Cadene/pretrained-models.pytorch#inception)
         - [InceptionV3](https://github.com/Cadene/pretrained-models.pytorch#inception)
         - [InceptionV4](https://github.com/Cadene/pretrained-models.pytorch#inception)
@@ -118,7 +120,7 @@ import pretrainedmodels
 
 ```python
 print(pretrainedmodels.model_names)
-> ['fbresnet152', 'bninception', 'resnext101_32x4d', 'resnext101_64x4d', 'inceptionv4', 'inceptionresnetv2', 'alexnet', 'densenet121', 'densenet169', 'densenet201', 'densenet161', 'resnet18', 'resnet34', 'resnet50', 'resnet101', 'resnet152', 'inceptionv3', 'squeezenet1_0', 'squeezenet1_1', 'vgg11', 'vgg11_bn', 'vgg13', 'vgg13_bn', 'vgg16', 'vgg16_bn', 'vgg19_bn', 'vgg19', 'nasnetalarge', 'nasnetamobile', 'cafferesnet101', 'senet154',  'se_resnet50', 'se_resnet101', 'se_resnet152', 'se_resnext50_32x4d', 'se_resnext101_32x4d']
+> ['googlenet', 'fbresnet152', 'bninception', 'resnext101_32x4d', 'resnext101_64x4d', 'inceptionv4', 'inceptionresnetv2', 'alexnet', 'densenet121', 'densenet169', 'densenet201', 'densenet161', 'resnet18', 'resnet34', 'resnet50', 'resnet101', 'resnet152', 'inceptionv3', 'squeezenet1_0', 'squeezenet1_1', 'vgg11', 'vgg11_bn', 'vgg13', 'vgg13_bn', 'vgg16', 'vgg16_bn', 'vgg19_bn', 'vgg19', 'nasnetalarge', 'nasnetamobile', 'cafferesnet101', 'senet154',  'se_resnet50', 'se_resnet101', 'se_resnet152', 'se_resnext50_32x4d', 'se_resnext101_32x4d']
 ```
 
 - To print the available pretrained settings for a chosen model:
@@ -257,6 +259,7 @@ NASNet-A-Mobile | [Tensorflow](https://github.com/tensorflow/models/tree/master/
 [ResNet18](https://github.com/Cadene/pretrained-models.pytorch#torchvision) | [Pytorch](https://github.com/pytorch/vision#models) | 70.142 | 89.274
 [VGG13](https://github.com/Cadene/pretrained-models.pytorch#torchvision) | [Pytorch](https://github.com/pytorch/vision#models) | 69.662 | 89.264
 [VGG11](https://github.com/Cadene/pretrained-models.pytorch#torchvision) | [Pytorch](https://github.com/pytorch/vision#models) | 68.970 | 88.746
+[GoogLeNet]() | Our porting | 66.454 | 87.522
 [SqueezeNet1_1](https://github.com/Cadene/pretrained-models.pytorch#torchvision) | [Pytorch](https://github.com/pytorch/vision#models) | 58.250 | 80.800
 [SqueezeNet1_0](https://github.com/Cadene/pretrained-models.pytorch#torchvision) | [Pytorch](https://github.com/pytorch/vision#models) | 58.108 | 80.428
 [Alexnet](https://github.com/Cadene/pretrained-models.pytorch#torchvision) | [Pytorch](https://github.com/pytorch/vision#models) | 56.432 | 79.194
@@ -336,6 +339,14 @@ As you can see [here](https://github.com/rwightman/pytorch-dpn-pretrained) DualP
 - `dpn107(num_classes=1000, pretrained='imagenet+5k')`
 
 `'imagenet+5k'` means that the network has been pretrained on imagenet5k before being finetuned on imagenet1k.
+
+#### GoogLeNet
+
+Source: [Caffe repo](https://github.com/BVLC/caffe/tree/master/models/bvlc_googlenet)
+
+The porting has been made possible [MMDnn](https://github.com/Microsoft/MMdnn).
+
+- `googlenet(num_classes=1000, pretrained='imagenet')`
 
 #### Xception
 
