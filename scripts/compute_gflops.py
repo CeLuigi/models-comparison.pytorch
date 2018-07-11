@@ -25,9 +25,14 @@ parser.add_argument('--save', default='../tflops_params.json', help='models info
 def main():
 	args = parser.parse_args()
 	
-	model_info = {}
+	try:
+		with open(args.save) as fp:
+			model_info = json.load(fp)
+	except:
+		model_info = {}
+
 	for m in model_names:
-		if not m.startswith('dpn'):
+		if not m in model_info.keys() and not m.startswith('dpn'):
 		
 			# create model
 			print("=> creating model '{}'".format(m))
@@ -58,9 +63,8 @@ def main():
 			summary, n_params = utils.summary(model.input_size, model)
 			model_info[m] = (model.compute_average_flops_cost() / 1e9 / div_coeff, n_params.item())
 
-
-	with open(args.save, 'w') as fp:
-		json.dump(model_info, fp)
+			with open(args.save, 'w') as fp:
+				json.dump(model_info, fp)
 		
 
 if __name__ == '__main__':
