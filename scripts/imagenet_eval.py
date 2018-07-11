@@ -38,9 +38,14 @@ parser.add_argument('--save', default='../accuracy.json', help='models info')
 def main():
 	args = parser.parse_args()
 
-	model_info = {}
+	try:
+		with open(args.save) as fp:
+			model_info = json.load(fp)
+	except:
+		model_info = {}
+
 	for m in model_names:
-		if not m.startswith('dpn'):
+		if not m in model_info.keys() and not m.startswith('dpn'):
 
 			# create model
 			print("=> creating model '{}'".format(m))
@@ -78,8 +83,8 @@ def main():
 			top1, top5 = validate(val_loader, model)
 			model_info[m] = (top1, top5)
 	
-	with open(args.save, 'w') as fp:
-		json.dump(model_info, fp)
+			with open(args.save, 'w') as fp:
+				json.dump(model_info, fp)
 
 
 def validate(val_loader, model):
@@ -96,8 +101,9 @@ def validate(val_loader, model):
 		input = input.cuda(non_blocking=True)
 		
 		# compute output
+		# NOTE: SqueezeNet1.x returns bs x 1000 x 1 x 1
 		with torch.no_grad():
-			output = model(input)
+			output = model(input).view(input.size(0), -1)
 		
 		# measure accuracy and record loss
 		prec1, prec5 = accuracy(output, target, topk=(1, 5))
