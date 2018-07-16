@@ -54,7 +54,7 @@ News:
         - [InceptionV3](https://github.com/CeLuigi/models-comparison.pytorch#inception)
         - [InceptionV4](https://github.com/CeLuigi/models-comparison.pytorch#inception)
         - [MobileNet](https://github.com/CeLuigi/models-comparison.pytorch#mobilenet)
-        - [MobileNetV2](https://github.com/CeLuigi/models-comparison.pytorch#mobilenetv2)
+        - [MobileNetV2](https://github.com/CeLuigi/models-comparison.pytorch#mobilenet)
         - [NASNet-A-Large](https://github.com/CeLuigi/models-comparison.pytorch#nasnet)
         - [NASNet-A-Mobile](https://github.com/CeLuigi/models-comparison.pytorch#nasnet)
         - [ResNeXt101_32x4d](https://github.com/CeLuigi/models-comparison.pytorch#resnext)
