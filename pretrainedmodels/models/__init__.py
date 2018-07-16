@@ -54,3 +54,6 @@ from .senet import se_resnext50_32x4d
 from .senet import se_resnext101_32x4d
 
 from .googlenet import googlenet
+from .mobilenet import mobilenet
+from .mobilenetv2 import mobilenetv2
+from .shufflenet import shufflenet
