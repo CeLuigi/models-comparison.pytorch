@@ -52,6 +52,8 @@ News:
         - [InceptionResNetV2](https://github.com/CeLuigi/models-comparison.pytorch#inception)
         - [InceptionV3](https://github.com/CeLuigi/models-comparison.pytorch#inception)
         - [InceptionV4](https://github.com/CeLuigi/models-comparison.pytorch#inception)
+        - [MobileNet](https://github.com/CeLuigi/models-comparison.pytorch#mobilenet)
+        - [MobileNetV2](https://github.com/CeLuigi/models-comparison.pytorch#mobilenetv2)
         - [NASNet-A-Large](https://github.com/CeLuigi/models-comparison.pytorch#nasnet)
         - [NASNet-A-Mobile](https://github.com/CeLuigi/models-comparison.pytorch#nasnet)
         - [ResNeXt101_32x4d](https://github.com/CeLuigi/models-comparison.pytorch#resnext)
@@ -67,6 +69,7 @@ News:
         - [SE-ResNet152](https://github.com/CeLuigi/models-comparison.pytorch#senet)
         - [SE-ResNeXt50_32x4d](https://github.com/CeLuigi/models-comparison.pytorch#senet)
         - [SE-ResNeXt101_32x4d](https://github.com/CeLuigi/models-comparison.pytorch#senet)
+        - [ShuffleNet](https://github.com/CeLuigi/models-comparison.pytorch#shufflenet)
         - [SqueezeNet1_0](https://github.com/CeLuigi/models-comparison.pytorch#torchvision)
         - [SqueezeNet1_1](https://github.com/CeLuigi/models-comparison.pytorch#torchvision)
         - [VGG11](https://github.com/CeLuigi/models-comparison.pytorch#torchvision)
@@ -78,7 +81,7 @@ News:
         - [VGG16_BN](https://github.com/CeLuigi/models-comparison.pytorch#torchvision)
         - [VGG19_BN](https://github.com/CeLuigi/models-comparison.pytorch#torchvision)
         - [Xception](https://github.com/CeLuigi/models-comparison.pytorch#xception)
-    - [Model API](https://github.com/CeLuigi/models-comparison.pytorch#model-api)
+        - [Model API](https://github.com/CeLuigi/models-comparison.pytorch#model-api)
         - [model.input_size](https://github.com/CeLuigi/models-comparison.pytorch#modelinput_size)
         - [model.input_space](https://github.com/CeLuigi/models-comparison.pytorch#modelinput_space)
         - [model.input_range](https://github.com/CeLuigi/models-comparison.pytorch#modelinput_range)
@@ -120,7 +123,8 @@ import pretrainedmodels
 
 ```python
 print(pretrainedmodels.model_names)
-> ['googlenet', 'fbresnet152', 'bninception', 'resnext101_32x4d', 'resnext101_64x4d', 'inceptionv4', 'inceptionresnetv2', 'alexnet', 'densenet121', 'densenet169', 'densenet201', 'densenet161', 'resnet18', 'resnet34', 'resnet50', 'resnet101', 'resnet152', 'inceptionv3', 'squeezenet1_0', 'squeezenet1_1', 'vgg11', 'vgg11_bn', 'vgg13', 'vgg13_bn', 'vgg16', 'vgg16_bn', 'vgg19_bn', 'vgg19', 'nasnetalarge', 'nasnetamobile', 'cafferesnet101', 'senet154',  'se_resnet50', 'se_resnet101', 'se_resnet152', 'se_resnext50_32x4d', 'se_resnext101_32x4d']
+> ['mobilenet', 'mobilenetv2', 'shufflenet', 'googlenet', 'fbresnet152', 'bninception', 'resnext101_32x4d', 'resnext101_64x4d', 'inceptionv4',
+'inceptionresnetv2', 'alexnet', 'densenet121', 'densenet169', 'densenet201', 'densenet161', 'resnet18', 'resnet34', 'resnet50', 'resnet101', 'resnet152', 'inceptionv3', 'squeezenet1_0', 'squeezenet1_1', 'vgg11', 'vgg11_bn', 'vgg13', 'vgg13_bn', 'vgg16', 'vgg16_bn', 'vgg19_bn', 'vgg19', 'nasnetalarge', 'nasnetamobile', 'cafferesnet101', 'senet154',  'se_resnet50', 'se_resnet101', 'se_resnet152', 'se_resnext50_32x4d', 'se_resnext101_32x4d']
 ```
 
 - To print the available pretrained settings for a chosen model:
@@ -347,6 +351,22 @@ Source: [Caffe repo](https://github.com/BVLC/caffe/tree/master/models/bvlc_googl
 The porting has been made possible [MMDnn](https://github.com/Microsoft/MMdnn).
 
 - `googlenet(num_classes=1000, pretrained='imagenet')`
+
+#### MobileNet-v1 and MobileNet-v2
+
+Source: [MobileNet-v1 repo](https://github.com/marvis/pytorch-mobilenet)
+
+- `mobilenet(num_classes=1000, pretrained='imagenet')`
+
+Source: [MobileNet-v2 repo](https://github.com/ericsun99/MobileNet-V2-Pytorch)
+
+- `mobilenetv2(num_classes=1000, pretrained='imagenet')`
+
+#### ShuffleNet
+
+Source: [ShuffleNet repo](https://github.com/ericsun99/ShuffleNet-1g8-Pytorch)
+
+- `shufflenet(num_classes=1000, pretrained='imagenet')`
 
 #### Xception
 
