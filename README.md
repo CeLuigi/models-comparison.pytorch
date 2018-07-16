@@ -6,6 +6,7 @@ The goal of this repo is:
 - to access pretrained ConvNets with a unique interface/API inspired by torchvision.
 
 News:
+- 16/07/2018: [MobileNet-v1](https://github.com/marvis/pytorch-mobilenet), [MobileNet-v2](https://github.com/ericsun99/MobileNet-V2-Pytorch) and [ShuffleNet](https://github.com/ericsun99/ShuffleNet-1g8-Pytorch) thanks to (Marvis)[https://github.com/marvis] and (EricSun99)[https://github.com/ericsun99]
 - 11/07/2018: [GoogLeNet](https://github.com/BVLC/caffe/tree/master/models/bvlc_googlenet) converted from Caffe ModelZoo
 - 16/04/2018: [SE-ResNet* and SE-ResNeXt*](https://github.com/hujie-frank/SENet) thanks to [Alex Parinov](https://github.com/creafz)
 - 09/04/2018: [SENet154](https://github.com/hujie-frank/SENet) thanks to [Alex Parinov](https://github.com/creafz)
@@ -352,7 +353,7 @@ The porting has been made possible [MMDnn](https://github.com/Microsoft/MMdnn).
 
 - `googlenet(num_classes=1000, pretrained='imagenet')`
 
-#### MobileNet-v1 and MobileNet-v2
+#### MobileNet*
 
 Source: [MobileNet-v1 repo](https://github.com/marvis/pytorch-mobilenet)
 
