@@ -273,16 +273,15 @@ def conv_flops_counter_hook(conv_module, input, output):
     
     batch_size = input.shape[0]
     output_height, output_width = output.shape[2:]
-    
     kernel_height, kernel_width = conv_module.kernel_size
     in_channels = conv_module.in_channels
     out_channels = conv_module.out_channels
+    groups = conv_module.groups
     
     # We count multiply-add as 2 flops
     conv_per_position_flops = 2 * kernel_height * kernel_width * in_channels * out_channels
     
     active_elements_count = batch_size * output_height * output_width
-    
     if conv_module.__mask__ is not None:
         
         # (b, 1, h, w)
@@ -299,6 +298,8 @@ def conv_flops_counter_hook(conv_module, input, output):
         bias_flops = out_channels * active_elements_count
     
     overall_flops = overall_conv_flops + bias_flops
+    overall_flops /= groups
+    #print('{} {} {} {} {} {}: {}'.format(in_channels, kernel_height, kernel_width, out_channels, output_height, output_width, overall_flops))
     
     conv_module.__flops__ += overall_flops
 
@@ -384,9 +385,15 @@ def summary(input_size, model):
 
                 m_key = '%s-%i' % (class_name, module_idx+1)
                 summary[m_key] = OrderedDict()
-                summary[m_key]['input_shape'] = list(input[0].size())
+                if isinstance(input[0], tuple):
+                    summary[m_key]['input_shape'] = list(input[0][1].size())
+                else:
+                    summary[m_key]['input_shape'] = list(input[0].size())
                 summary[m_key]['input_shape'][0] = -1
-                summary[m_key]['output_shape'] = list(output.size())
+                if isinstance(output, tuple):
+                    summary[m_key]['output_shape'] = list(output[1].size())
+                else:
+                    summary[m_key]['output_shape'] = list(output.size())
                 summary[m_key]['output_shape'][0] = -1
 
                 params = 0
