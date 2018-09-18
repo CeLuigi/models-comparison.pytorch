@@ -38,11 +38,11 @@ from .models.torchvision_models import vgg16_bn
 from .models.torchvision_models import vgg19_bn
 from .models.torchvision_models import vgg19
 from .models.dpn import dpn68
-from .models.dpn import dpn68b
-from .models.dpn import dpn92
+#from .models.dpn import dpn68b
+#from .models.dpn import dpn92
 from .models.dpn import dpn98
 from .models.dpn import dpn131
-from .models.dpn import dpn107
+#from .models.dpn import dpn107
 from .models.xception import xception
 from .models.senet import senet154
 from .models.senet import se_resnet50
