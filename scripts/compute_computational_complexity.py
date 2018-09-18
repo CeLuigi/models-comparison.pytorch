@@ -32,7 +32,7 @@ def main():
 		model_info = {}
 
 	for m in model_names:
-		if not m in model_info.keys() and not m.startswith('dpn'):
+		if not m in model_info.keys():
 		
 			# create model
 			print("=> creating model '{}'".format(m))
@@ -57,11 +57,9 @@ def main():
 			
 			with torch.no_grad():
 				_ = model(torch.randn(args.batch_size, *model.input_size).cuda(non_blocking=True))
-			 
-			div_coeff = 2 if m.startswith('resnet') else 1
 			
 			summary, n_params = utils.summary(model.input_size, model)
-			model_info[m] = (model.compute_average_flops_cost() / 1e9 / div_coeff, n_params.item())
+			model_info[m] = (model.compute_average_flops_cost() / 1e9 / 2, n_params.item())
 
 			with open(args.save, 'w') as fp:
 				json.dump(model_info, fp)

@@ -45,7 +45,7 @@ def main():
 		model_info = {}
 
 	for m in model_names:
-		if not m in model_info.keys() and not m.startswith('dpn'):
+		if not m in model_info.keys():
 
 			# create model
 			print("=> creating model '{}'".format(m))
