@@ -47,7 +47,7 @@ News:
         - [DualPathNet92](https://github.com/CeLuigi/models-comparison.pytorch#dualpathnetworks)
         - [DualPathNet98](https://github.com/CeLuigi/models-comparison.pytorch#dualpathnetworks)
         - [DualPathNet107](https://github.com/CeLuigi/models-comparison.pytorch#dualpathnetworks)
-        - [DualPathNet113](https://github.com/CeLuigi/models-comparison.pytorch#dualpathnetworks)
+        - [DualPathNet131](https://github.com/CeLuigi/models-comparison.pytorch#dualpathnetworks)
         - [FBResNet152](https://github.com/CeLuigi/models-comparison.pytorch#facebook-resnet)
         - [GoogLeNet](https://github.com/CeLuigi/models-comparison.pytorch#googlenet)
         - [InceptionResNetV2](https://github.com/CeLuigi/models-comparison.pytorch#inception)
