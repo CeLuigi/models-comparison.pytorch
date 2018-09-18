@@ -23,7 +23,7 @@ pretrained_settings = {
             'input_space': 'RGB',
             'input_size': [3, 224, 224],
             'input_range': [0, 1],
-            'mean': [124 / 255, 117 / 255, 104 / 255],
+            'mean': [124. / 255, 117. / 255, 104. / 255],
             'std': [1 / (.0167 * 255)] * 3,
             'num_classes': 1000
         }
@@ -34,27 +34,27 @@ pretrained_settings = {
             'input_space': 'RGB',
             'input_size': [3, 224, 224],
             'input_range': [0, 1],
-            'mean': [124 / 255, 117 / 255, 104 / 255],
+            'mean': [124. / 255, 117. / 255, 104. / 255],
             'std': [1 / (.0167 * 255)] * 3,
             'num_classes': 1000
         }
     },
     'dpn92': {
-        # 'imagenet': {
-        #     'url': 'http://data.lip6.fr/cadene/pretrainedmodels/dpn68-66bebafa7.pth',
-        #     'input_space': 'RGB',
-        #     'input_size': [3, 224, 224],
-        #     'input_range': [0, 1],
-        #     'mean': [124 / 255, 117 / 255, 104 / 255],
-        #     'std': [1 / (.0167 * 255)] * 3,
-        #     'num_classes': 1000
-        # },
+        'imagenet': {
+            'url': '/home/celona/.torch/models/dpn68-66bebafa7.pth',
+            'input_space': 'RGB',
+            'input_size': [3, 224, 224],
+            'input_range': [0, 1],
+            'mean': [124. / 255, 117. / 255, 104. / 255],
+            'std': [1 / (.0167 * 255)] * 3,
+            'num_classes': 1000
+        },
         'imagenet+5k': {
             'url': 'http://data.lip6.fr/cadene/pretrainedmodels/dpn92_extra-b040e4a9b.pth',
             'input_space': 'RGB',
             'input_size': [3, 224, 224],
             'input_range': [0, 1],
-            'mean': [124 / 255, 117 / 255, 104 / 255],
+            'mean': [124. / 255, 117. / 255, 104. / 255],
             'std': [1 / (.0167 * 255)] * 3,
             'num_classes': 1000
         }
@@ -65,7 +65,7 @@ pretrained_settings = {
             'input_space': 'RGB',
             'input_size': [3, 224, 224],
             'input_range': [0, 1],
-            'mean': [124 / 255, 117 / 255, 104 / 255],
+            'mean': [124. / 255, 117. / 255, 104. / 255],
             'std': [1 / (.0167 * 255)] * 3,
             'num_classes': 1000
         }
@@ -76,7 +76,7 @@ pretrained_settings = {
             'input_space': 'RGB',
             'input_size': [3, 224, 224],
             'input_range': [0, 1],
-            'mean': [124 / 255, 117 / 255, 104 / 255],
+            'mean': [124. / 255, 117. / 255, 104. / 255],
             'std': [1 / (.0167 * 255)] * 3,
             'num_classes': 1000
         }
@@ -87,7 +87,7 @@ pretrained_settings = {
             'input_space': 'RGB',
             'input_size': [3, 224, 224],
             'input_range': [0, 1],
-            'mean': [124 / 255, 117 / 255, 104 / 255],
+            'mean': [124. / 255, 117. / 255, 104. / 255],
             'std': [1 / (.0167 * 255)] * 3,
             'num_classes': 1000
         }
@@ -135,6 +135,7 @@ def dpn92(num_classes=1000, pretrained='imagenet+5k'):
         num_init_features=64, k_r=96, groups=32,
         k_sec=(3, 4, 20, 3), inc_sec=(16, 32, 24, 128),
         num_classes=num_classes, test_time_pool=True)
+    import ipdb ; ipdb.set_trace()
     if pretrained:
         settings = pretrained_settings['dpn92'][pretrained]
         assert num_classes == settings['num_classes'], \
