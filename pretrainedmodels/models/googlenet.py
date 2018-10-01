@@ -22,7 +22,7 @@ pretrained_settings = {
     'googlenet': {
         'imagenet': {
             # Was ported using python2 (may trigger warning)
-            'url': '/home/celona/.torch/models/googlenet.pth',
+            'url': 'https://www.dropbox.com/s/bnbj496ef1n98yi/googlenet.pth',
             'input_space': 'BGR',
             'input_size': [3, 224, 224],
             'input_range': [0, 255],

@@ -494,6 +494,7 @@ class BNInception(nn.Module):
         x = self.logits(x)
         return x
 
+
 def bninception(num_classes=1000, pretrained='imagenet'):
     r"""BNInception model architecture from <https://arxiv.org/pdf/1502.03167.pdf>`_ paper.
     """
@@ -512,5 +513,4 @@ def bninception(num_classes=1000, pretrained='imagenet'):
 
 
 if __name__ == '__main__':
-
     model = bninception()

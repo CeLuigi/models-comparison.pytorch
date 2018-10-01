@@ -1,6 +1,5 @@
 import torch
 import torch.nn as nn
-from torch.autograd import Variable
 #from torch.legacy import nn as nnl
 import torch.utils.model_zoo as model_zoo
 

@@ -8,7 +8,7 @@ __all__ = ['MobileNetv2', 'mobilenetv2']
 pretrained_settings = {
     'mobilenetv2': {
         'imagenet': {
-            'url': '/home/celona/.torch/models/mobilenetv2.pth',
+            'url': 'https://www.dropbox.com/s/njpzzabhrbhl9cc/mobilenetv2.pth',
             'input_space': 'RGB',
             'input_size': [3, 224, 224],
             'input_range': [0, 1],

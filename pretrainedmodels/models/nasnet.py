@@ -2,7 +2,6 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 import torch.utils.model_zoo as model_zoo
-from torch.autograd import Variable
 
 pretrained_settings = {
     'nasnetalarge': {
@@ -637,7 +636,7 @@ def nasnetalarge(num_classes=1001, pretrained='imagenet'):
 if __name__ == "__main__":
 
     model = NASNetALarge()
-    input = Variable(torch.randn(2, 3, 331, 331))
+    input = torch.randn(2, 3, 331, 331)
 
     output = model(input)
     print(output.size())

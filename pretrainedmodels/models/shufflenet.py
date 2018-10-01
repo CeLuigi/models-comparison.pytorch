@@ -11,7 +11,7 @@ __all__ = ['ShuffleNet', 'shufflenet']
 pretrained_settings = {
     'shufflenet': {
         'imagenet': {
-            'url': '/home/celona/.torch/models/shufflenet.pth',
+            'url': 'https://www.dropbox.com/s/25sjt5nwghsr9n5/shufflenet.pth',
             'input_space': 'RGB',
             'input_size': [3, 224, 224],
             'input_range': [0, 1],

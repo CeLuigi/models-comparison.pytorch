@@ -41,7 +41,7 @@ pretrained_settings = {
     },
     'dpn92': {
         'imagenet': {
-            'url': '/home/celona/.torch/models/dpn68-66bebafa7.pth',
+            'url': 'https://www.dropbox.com/s/lqucb4xh1bd4loe/dpn68-66bebafa7.pth',
             'input_space': 'RGB',
             'input_size': [3, 224, 224],
             'input_range': [0, 1],
