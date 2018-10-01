@@ -1,35 +1,25 @@
-# Pretrained models for Pytorch (Work in progress)
+# Deep neural network architecture comparison
+Code for the paper *Benchmark Analysis of Representative Deep Neural Network Architectures*
 
-The goal of this repo is:
+## Dependencies:
+* Python 2.7
+* PyTorch 4.0.0
+* Torchvision
 
-- to help to reproduce research papers results (transfer learning setups for instance),
-- to access pretrained ConvNets with a unique interface/API inspired by torchvision.
+## Citation
+If you use our code, please consider cite the following:
+* Simone Bianco, Remi Cadene, Luigi Celona, and Paolo Napoletano. Benchmark Analysis of Representative Deep Neural Network Architectures. In arXiv preprint arXiv:*, 2018.
+```
+@article{bianco2018aesthetics,
+  title={Benchmark Analysis of Representative Deep Neural Network Architectures},
+  author={Bianco, Simone and Cadene, Remi and Celona, Luigi and Napoletano, Paolo},
+  journal={arXiv preprint arXiv:*},
+  year={2018}
+```
 
-News:
-- 16/07/2018: [MobileNet-v1](https://github.com/marvis/pytorch-mobilenet), [MobileNet-v2](https://github.com/ericsun99/MobileNet-V2-Pytorch) and [ShuffleNet](https://github.com/ericsun99/ShuffleNet-1g8-Pytorch) thanks to [Marvis](https://github.com/marvis) and [EricSun99](https://github.com/ericsun99)
-- 11/07/2018: [GoogLeNet](https://github.com/BVLC/caffe/tree/master/models/bvlc_googlenet) converted from Caffe ModelZoo
-- 16/04/2018: [SE-ResNet* and SE-ResNeXt*](https://github.com/hujie-frank/SENet) thanks to [Alex Parinov](https://github.com/creafz)
-- 09/04/2018: [SENet154](https://github.com/hujie-frank/SENet) thanks to [Alex Parinov](https://github.com/creafz)
-- 22/03/2018: CaffeResNet101 (good for localization with FasterRCNN)
-- 21/03/2018: NASNet Mobile thanks to [Veronika Yurchuk](https://github.com/veronikayurchuk) and [Anastasiia](https://github.com/DagnyT)
-- 25/01/2018: DualPathNetworks thanks to [Ross Wightman](https://github.com/rwightman/pytorch-dpn-pretrained), Xception thanks to [T Standley](https://github.com/tstandley/Xception-PyTorch), improved TransformImage API
-- 13/01/2018: `pip install pretrainedmodels`, `pretrainedmodels.model_names`, `pretrainedmodels.pretrained_settings`
-- 12/01/2018: `python setup.py install`
-- 08/12/2017: update data url (/!\ `git pull` is needed)
-- 30/11/2017: improve API (`model.features(input)`, `model.logits(features)`, `model.forward(input)`, `model.last_linear`)
-- 16/11/2017: nasnet-a-large pretrained model ported by T. Durand and R. Cadene
-- 22/07/2017: torchvision pretrained models
-- 22/07/2017: momentum in inceptionv4 and inceptionresnetv2 to 0.1
-- 17/07/2017: model.input_range attribut
-- 17/07/2017: BNInception pretrained on Imagenet
-
-## Summary
+### Summary
 
 - [Installation](https://github.com/CeLuigi/models-comparison.pytorch#installation)
-- [Quick examples](https://github.com/CeLuigi/models-comparison.pytorch#quick-examples)
-- [Few use cases](https://github.com/CeLuigi/models-comparison.pytorch#few-use-cases)
-    - [Compute imagenet logits](https://github.com/CeLuigi/models-comparison.pytorch#compute-imagenet-logits)
-    - [Compute imagenet validation metrics](https://github.com/CeLuigi/models-comparison.pytorch#compute-imagenet-validation-metrics)
 - [Evaluation on ImageNet](https://github.com/CeLuigi/models-comparison.pytorch#evaluation-on-imagenet)
     - [Accuracy on valset](https://github.com/CeLuigi/models-comparison.pytorch#accuracy-on-validation-set)
     - [Reproducing results](https://github.com/CeLuigi/models-comparison.pytorch#reproducing-results)
