@@ -24,7 +24,8 @@ def conv_bn(inp, oup, stride):
     return nn.Sequential(
         nn.Conv2d(inp, oup, 3, stride, 1, bias=False),
         nn.BatchNorm2d(oup),
-        nn.ReLU6(inplace=True)
+        nn.ReLU(inplace=True)
+        #nn.ReLU6(inplace=True)
     )
 
 
@@ -32,7 +33,8 @@ def conv_1x1_bn(inp, oup):
     return nn.Sequential(
         nn.Conv2d(inp, oup, 1, 1, 0, bias=False),
         nn.BatchNorm2d(oup),
-        nn.ReLU6(inplace=True)
+        nn.ReLU(inplace=True)
+        #nn.ReLU6(inplace=True)
     )
 
 
@@ -47,11 +49,13 @@ class InvertedResidual(nn.Module):
             # pw
             nn.Conv2d(inp, inp * expand_ratio, 1, 1, 0, bias=False),
             nn.BatchNorm2d(inp * expand_ratio),
-            nn.ReLU6(inplace=True),
+            nn.ReLU(inplace=True),
+            #nn.ReLU6(inplace=True),
             # dw
             nn.Conv2d(inp * expand_ratio, inp * expand_ratio, 3, stride, 1, groups=inp * expand_ratio, bias=False),
             nn.BatchNorm2d(inp * expand_ratio),
-            nn.ReLU6(inplace=True),
+            nn.ReLU(inplace=True),
+            #nn.ReLU6(inplace=True),
             # pw-linear
             nn.Conv2d(inp * expand_ratio, oup, 1, 1, 0, bias=False),
             nn.BatchNorm2d(oup),
@@ -100,7 +104,7 @@ class MobileNetV2(nn.Module):
 
         # building classifier
         self.classifier = nn.Sequential(
-            nn.Dropout(),
+            #nn.Dropout(),
             nn.Linear(self.last_channel, num_classes),
         )
 
@@ -119,7 +123,7 @@ def mobilenetv2(num_classes=1000, pretrained='imagenet'):
         settings = pretrained_settings['mobilenetv2'][pretrained]
         assert num_classes == settings['num_classes'], \
             "num_classes should be {}, but is {}".format(settings['num_classes'], num_classes)
-        model.load_state_dict(torch.load(settings['url']))
+        #model.load_state_dict(torch.load(settings['url']))
         model.input_space = settings['input_space']
         model.input_size = settings['input_size']
         model.input_range = settings['input_range']

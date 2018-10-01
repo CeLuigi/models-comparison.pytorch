@@ -96,18 +96,18 @@ for model_name in __all__:
 def load_pretrained(model, num_classes, settings):
     assert num_classes == settings['num_classes'], \
         "num_classes should be {}, but is {}".format(settings['num_classes'], num_classes)
-    try:
-        model.load_state_dict(model_zoo.load_url(settings['url']))
-    except:
-        print('===========> Fixing model')
-        tmp = model_zoo.load_url(settings['url'])
-        for kmodel, kdict in zip(model.state_dict().keys(), tmp.keys()):
-            tmp[kmodel] = tmp.pop(kdict)
-        model.load_state_dict(tmp)
+    # try:
+    #     model.load_state_dict(model_zoo.load_url(settings['url']))
+    # except:
+    #     print('===========> Fixing model')
+    #     tmp = model_zoo.load_url(settings['url'])
+    #     for kmodel, kdict in zip(model.state_dict().keys(), tmp.keys()):
+    #         tmp[kmodel] = tmp.pop(kdict)
+    #     model.load_state_dict(tmp)
         
-        from os.path import join
-        import torch
-        torch.save(tmp, join('/home/celona/.torch/models',settings['url'].split('/')[-1]))
+    #     from os.path import join
+    #     import torch
+    #     torch.save(tmp, join('/home/celona/.torch/models',settings['url'].split('/')[-1]))
 
     model.input_space = settings['input_space']
     model.input_size = settings['input_size']
@@ -272,8 +272,8 @@ def inceptionv3(num_classes=1000, pretrained='imagenet'):
         x = self.Mixed_6c(x) # 17 x 17 x 768
         x = self.Mixed_6d(x) # 17 x 17 x 768
         x = self.Mixed_6e(x) # 17 x 17 x 768
-        if self.training and self.aux_logits:
-            self._out_aux = self.AuxLogits(x) # 17 x 17 x 768
+        # if self.training and self.aux_logits:
+        #     self._out_aux = self.AuxLogits(x) # 17 x 17 x 768
         x = self.Mixed_7a(x) # 8 x 8 x 1280
         x = self.Mixed_7b(x) # 8 x 8 x 2048
         x = self.Mixed_7c(x) # 8 x 8 x 2048
@@ -284,10 +284,10 @@ def inceptionv3(num_classes=1000, pretrained='imagenet'):
         x = F.dropout(x, training=self.training) # 1 x 1 x 2048
         x = x.view(x.size(0), -1) # 2048
         x = self.last_linear(x) # 1000 (num_classes)
-        if self.training and self.aux_logits:
-            aux = self._out_aux
-            self._out_aux = None
-            return x, aux
+        # if self.training and self.aux_logits:
+        #     aux = self._out_aux
+        #     self._out_aux = None
+        #     return x, aux
         return x
 
     def forward(self, input):
