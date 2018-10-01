@@ -1,4 +1,4 @@
-# Deep neural network architecture comparison
+# Deep neural network architectures comparison
 Code for the paper *Benchmark Analysis of Representative Deep Neural Network Architectures*
 
 ## Dependencies:
@@ -17,7 +17,7 @@ If you use our code, please consider cite the following:
   year={2018}
 ```
 
-### Summary
+## Summary
 
 - [Installation](https://github.com/CeLuigi/models-comparison.pytorch#installation)
 - [Evaluation on ImageNet](https://github.com/CeLuigi/models-comparison.pytorch#evaluation-on-imagenet)
