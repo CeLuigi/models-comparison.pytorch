@@ -9,12 +9,12 @@ Code for the paper *Benchmark Analysis of Representative Deep Neural Network Arc
 
 ## Citation
 If you use our code, please consider cite the following:
-* Simone Bianco, Remi Cadene, Luigi Celona, and Paolo Napoletano. Benchmark Analysis of Representative Deep Neural Network Architectures. In arXiv preprint arXiv:*, 2018.
+* Simone Bianco, Remi Cadene, Luigi Celona, and Paolo Napoletano. Benchmark Analysis of Representative Deep Neural Network Architectures. In arXiv preprint arXiv:1810.00736, 2018.
 ```
 @article{bianco2018dnnsbench,
   title={Benchmark Analysis of Representative Deep Neural Network Architectures},
   author={Bianco, Simone and Cadene, Remi and Celona, Luigi and Napoletano, Paolo},
-  journal={arXiv preprint arXiv:*},
+  journal={arXiv preprint arXiv:1810.00736},
   year={2018}
 ```
 
