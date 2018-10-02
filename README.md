@@ -5,6 +5,7 @@ Code for the paper *Benchmark Analysis of Representative Deep Neural Network Arc
 * Python 2.7
 * PyTorch 4.0.0
 * Torchvision
+* munch
 
 ## Citation
 If you use our code, please consider cite the following:
