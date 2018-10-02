@@ -1,5 +1,5 @@
 # Deep neural network architectures comparison
-Code for the paper *Benchmark Analysis of Representative Deep Neural Network Architectures*.
+Code for the paper *Benchmark Analysis of Representative Deep Neural Network Architectures* ([arXiv](https://arxiv.org/abs/1810.00736)).
 
 ## Dependencies:
 * Python 2.7
