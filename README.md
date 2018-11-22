@@ -14,11 +14,12 @@ If you use our code, please consider cite the following:
 @article{bianco2018dnnsbench,
  author = {Bianco, Simone and Cadene, Remi and Celona, Luigi and Napoletano, Paolo},
  year = {2018},
- pages = {1-1},
  title = {Benchmark Analysis of Representative Deep Neural Network Architectures},
  journal = {IEEE Access},
- doi = {10.1109/ACCESS.2018.2877890},
- issn = {2169-3536}
+ volume={6},
+ pages={64270-64277},
+ doi={10.1109/ACCESS.2018.2877890},
+ ISSN={2169-3536},
 }
 ```
 
