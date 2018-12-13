@@ -3,7 +3,7 @@ Code for the paper *Benchmark Analysis of Representative Deep Neural Network Arc
 
 ## Dependencies:
 * Python 2.7
-* [PyTorch](https://pytorch.org/) 4.0.0
+* [PyTorch](https://pytorch.org/) 0.4.0
 * Torchvision
 * munch
 
