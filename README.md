@@ -1,4 +1,4 @@
-# Deep neural network architectures comparison
+# Benchmark Analysis of Representative Deep Neural Network Architectures
 Code for the paper *Benchmark Analysis of Representative Deep Neural Network Architectures* ([IEEE Access](https://ieeexplore.ieee.org/document/8506339)).
 
 ## Dependencies:
