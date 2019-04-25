@@ -19,6 +19,13 @@ If you use our code, please consider cite the following:
 ## Abstract
 This paper presents an in-depth analysis of the majority of the deep neural networks (DNNs) proposed in the state of the art for image recognition. For each DNN, multiple performance indices are observed, such as recognition accuracy, model complexity, computational complexity, memory usage, and inference time. The behavior of such performance indices and some combinations of them are analyzed and discussed. To measure the indices, we experiment the use of DNNs on two different computer architectures, a workstation equipped with a NVIDIA Titan X Pascal, and an embedded system based on a NVIDIA Jetson TX1 board. This experimentation allows a direct comparison between DNNs running on machines with very different computational capacities. This paper is useful for researchers to have a complete view of what solutions have been explored so far and in which research directions are worth exploring in the future, and for practitioners to select the DNN architecture(s) that better fit the resource constraints of practical deployments and applications. To complete this work, all the DNNs, as well as the software used for the analysis, are available online.
 
+## Performance indices
+### Top-1 accuracy and _vs._ computational complexity
+<img src="https://dl.dropboxusercontent.com/s/os85fwwcogtksyx/FLOPS1.png" width="610"/>
+
+### Top-5 accuracy _vs._ computational complexity
+<img src="https://dl.dropboxusercontent.com/s/m9mtk1c6nfo0s18/FLOPS5.png" width="610"/>
+
 ## Architectures
 We collect 40 state-of-the-art Deep neural network architectures already trained on ImageNet-1k.
 - [AlexNet](https://github.com/CeLuigi/models-comparison.pytorch/wiki/TorchVision-models#alexnet)
