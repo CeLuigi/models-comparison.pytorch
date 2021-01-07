@@ -27,4 +27,6 @@ If you use our code, please consider cite the following:
 Visit the [Wiki](https://github.com/CeLuigi/models-comparison.pytorch/wiki) for more details about deep neural network architectures and indices considered.
 
 ## Acknowledgement
-Thanks to the deep learning community and especially to the contributers of the PyTorch ecosystem.
+* Thanks to the deep learning community and especially to the contributers of the PyTorch ecosystem.
+* *Evaluation of Automatic Image Color Theme Extraction Methods*
+This work has been partially supported by E4S: ENERGY FOR SAFETY Sistema integrato per la sicurezza della persona ed il risparmio energetico nelle applicazioni di Home & Building Automation, CUP: E48B17000310009 - Call “Smart Living”.
